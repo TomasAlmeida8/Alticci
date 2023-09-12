@@ -9,7 +9,6 @@ import java.util.Map;
 
 @Path("/alticci")
 public class CalculatorResource {
-    private static final int CACHE_SIZE = 1000;
     private final Map<Integer, BigInteger> cache = new HashMap<>();
 
     public CalculatorResource() {
