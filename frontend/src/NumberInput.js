@@ -8,7 +8,8 @@ function NumberInput({ onCalculate }) {
     setNumber(event.target.value);
   };
 
-  const handleCalculate = () => {
+  const handleCalculate = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
     setError(null); // Clear any previous errors
 
     fetch(`http://localhost:8080/alticci/${number}`)
@@ -29,16 +30,16 @@ function NumberInput({ onCalculate }) {
   };
 
   return (
-    <div>
+    <form onSubmit={handleCalculate}>
       <input
         type="number"
         placeholder="Enter a number"
         value={number}
         onChange={handleNumberChange}
       />
-      <button onClick={handleCalculate}>Calculate</button>
+      <button type="submit">Calculate</button>
       {error && <p className="error">{error}</p>}
-    </div>
+    </form>
   );
 }
 
