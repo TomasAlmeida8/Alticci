@@ -5,12 +5,25 @@ function NumberInput({ onCalculate }) {
   const [error, setError] = useState(null);
 
   const handleNumberChange = (event) => {
-    setNumber(event.target.value);
+    const inputNumber = event.target.value;
+    setNumber(inputNumber);
+
+    if (!Number.isInteger(parseFloat(inputNumber))) {
+      setError('Please enter a whole number');
+    } else {
+      setError(null); // Clear the error if it's a whole number
+    }
   };
 
   const handleCalculate = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
     setError(null); // Clear any previous errors
+
+    // Validate the input
+    if (!Number.isInteger(parseFloat(number))) {
+      setError('Please enter a whole number');
+      return;
+    }
 
     fetch(`http://localhost:8080/alticci/${number}`)
       .then((response) => {
@@ -32,8 +45,8 @@ function NumberInput({ onCalculate }) {
   return (
     <form onSubmit={handleCalculate}>
       <input
-        type="number"
-        placeholder="Enter a number"
+        type="text"
+        placeholder="Enter a whole number"
         value={number}
         onChange={handleNumberChange}
       />
