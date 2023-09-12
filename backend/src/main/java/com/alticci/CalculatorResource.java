@@ -22,9 +22,9 @@ public class CalculatorResource {
     @Path("/{n}")
     public String calculate(@PathParam("n") int n) {
         if (n < 0) {
-            return BigInteger.valueOf(-1).toString(); // Handle invalid input
+            throw new IllegalArgumentException("Input must be a non-negative number"); // Handle invalid input by throwing an exception
         }
-
+        
         // Check if the value is already in the cache
         if (cache.containsKey(n)) {
             return cache.get(n).toString();
