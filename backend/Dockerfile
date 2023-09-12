@@ -2,7 +2,10 @@
 FROM eclipse-temurin:17-jdk-jammy
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /backend
+
+# Run the Maven build and package step before copying the JAR file
+RUN ./mvnw clean package
 
 # Copy the JAR file from the "target" directory to the container's working directory
 COPY /target/alticci_calculator-backend-1.0.0-SNAPSHOT.jar backend.jar
