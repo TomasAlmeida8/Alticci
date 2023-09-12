@@ -41,7 +41,7 @@ $ git clone https://github.com/TomasAlmeida8/Alticci
 
 Run the following commands in the terminal:
 
-- Inside the `Alticci` folder, run:
+- Inside the `Alticci` folder (source folder), run:
 
 ```console
 $ docker-compose up
@@ -75,7 +75,7 @@ Install requirements:
 
 Run the following commands in two separate terminals:
 
-1. Inside the `backend` folder (source folder), run:
+1. Inside the `backend` folder, run:
 
 ```console
 $ ./mvnw quarkus:dev
