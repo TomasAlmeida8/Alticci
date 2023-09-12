@@ -1,9 +1,20 @@
+# Alticci Sequence
+## Table of Contents
+
+- [About the Application](#about-the-application)
+- [Installation](#installation)
+- [How To Run (Docker)](#how-to-run-docker)
+- [Prerequisites](#prerequisites)
+- [Requirements](#requirements)
+- [How To Run](#how-to-run)
+- [Bookmarks](#bookmarks)
+
 ## About the Application
 
 This is a Rest API microservice which aims to calculate and return the **$A_n$** term of the **Alticci Sequence**.
 
 
-### Alticci sequence definition
+### Alticci Sequence Definition
 
 The Alticci Sequence ($A_n$) is defined following these math rules:
 
@@ -64,7 +75,7 @@ Install requirements:
 
 Run the following commands in two separate terminals:
 
-1. Inside the `backend` folder, run:
+1. Inside the `backend` folder (source folder), run:
 
 ```console
 $ ./mvnw quarkus:dev
